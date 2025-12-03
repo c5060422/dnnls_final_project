@@ -22,7 +22,11 @@
 
 
 ## Innovation Summary
-I replaced the existing visual autoencoder with a ResNet-based version. Along with introducing a new Image_Latent_Dim variable, this allowed me to experiment with latent dimensions of 16, 32, 64, and 128 while keeping the rest of the code unchanged. I expected that increasing the latent dimension would lead to improved image loss performance. In addition, I separated the individual loss functions so they could be tracked independently while preserving the existing overall loss function.
+I replaced the existing visual autoencoder with a ResNet-based version. Along with introducing a new Image_Latent_Dim variable, this allowed me to experiment with latent dimensions of 16, 32, 64, and 128 while keeping the rest of the code unchanged.  
+
+I expected that increasing the latent dimension would lead to improved image loss performance.  
+
+In addition, I separated the individual loss functions so they could be tracked independently while preserving the existing overall loss function.
 
 
 ## Key Results
@@ -48,8 +52,10 @@ I replaced the existing visual autoencoder with a ResNet-based version. Along wi
 
 
 ## Most Important Findings
-The innovation has not improved the model, as the results show no meaningful change in performance. The model appears not to be learning, which is also evident from the minimal variation across epochs in the base case. This behaviour suggests the presence of bugs elsewhere in the system or a bottleneck in other latent variables such as the text latent dimension or the GRU.
-When the loss functions are separated, the Text Loss is significantly higher than both the Image Loss and the Context Loss. This imbalance may be limiting the system’s ability to generate accurate image predictions.
+The innovation has not improved the model, as the results show no meaningful change in performance. The model appears not to be learning, which is also evident from the minimal variation across epochs in the base case. This behaviour suggests the presence of bugs elsewhere in the system or a bottleneck in other latent variables such as the text latent dimension or the GRU.  
+
+When the loss functions are separated, the Text Loss is significantly higher than both the Image Loss and the Context Loss. This imbalance may be limiting the system’s ability to generate accurate image predictions.  
+
 To move forward, I believe the Text Loss should be prioritised. Additionally, a systems-thinking approach would be beneficial, examining the model holistically rather than focusing on any single component in isolation.
 
 
